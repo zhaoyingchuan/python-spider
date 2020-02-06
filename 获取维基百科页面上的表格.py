@@ -17,7 +17,7 @@ i = 1
 for table in tables:
     fileName = "table%s.csv" % i
     rows = table.findAll("tr")
-    csvFile = open(fileName,'wt',newline='',encoding='utf-8')
+    csvFile = open(fileName,'wt',newline='',encoding='utf-8-sig')
     writer = csv.writer(csvFile)
     try:
         for row in rows:
