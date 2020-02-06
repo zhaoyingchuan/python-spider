@@ -5,7 +5,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from urllib.request import HTTPError
 try:
-    html = urlopen("https://zh.wikipedia.org/wiki/2019%E5%B9%B4%E4%B8%AD%E5%A4%AE%E5%B9%BF%E6%92%AD%E7%94%B5%E8%A7%86%E6%80%BB%E5%8F%B0%E6%98%A5%E8%8A%82%E8%81%94%E6%AC%A2%E6%99%9A%E4%BC%9A?oldformat=true")
+    html = urlopen("https://zh.wikisource.org/wiki/%E8%84%82%E7%A1%AF%E9%BD%8B%E9%87%8D%E8%A9%95%E7%9F%B3%E9%A0%AD%E8%A8%98/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%9B%9E")
 except HTTPError as e:
     print("not found")
 bsObj = BeautifulSoup(html,"html.parser")
