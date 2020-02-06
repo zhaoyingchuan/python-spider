@@ -5,7 +5,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from urllib.request import HTTPError
 try:
-    html = urlopen("https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States")
+    html = urlopen("https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_historical_population?oldformat=true")
 except HTTPError as e:
     print("not found")
 bsObj = BeautifulSoup(html,"html.parser")
