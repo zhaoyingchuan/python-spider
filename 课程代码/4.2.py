@@ -1,6 +1,6 @@
 import re
 
-with open(r"D:\myfile\tianlong.txt","rb") as f:
+with open(r"D:\Desktop\tianlong.txt","rb") as f:
     data=f.read().decode()
 
 pat1="乔峰"

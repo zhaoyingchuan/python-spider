@@ -2,16 +2,16 @@
 
 from urllib import request
 import urllib
-#http://www.baidu.com/s?wd=%E5%8C%97%E4%BA%AC #url编码
+# http://www.baidu.com/s?wd=%E5%8C%97%E4%BA%AC #url编码
 
 wd={"wd":"北京"}
 
 url="http://www.baidu.com/s?"
 
-#构造url编码
+# 构造url编码
 wdd=urllib.parse.urlencode(wd)
 
-url=url+wdd
+url=r"https://zh.wikisource.org/wiki/脂硯齋重評石頭記/第十三回"
 
 req=request.Request(url)
 

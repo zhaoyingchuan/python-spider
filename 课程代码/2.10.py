@@ -7,7 +7,7 @@ import random
 	
 
 proxylist=[
-	{"http":"101.248.64.82:80"}
+	{"http":"114.104.185.114"}
 ]
 
 proxy=random.choice(proxylist)

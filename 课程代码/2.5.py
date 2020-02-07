@@ -2,7 +2,7 @@
 from urllib import request
 import re
 
-url=r"http://www.baidu.com/"
+url=r"https://zh.wikisource.org/wiki/%E8%84%82%E7%A1%AF%E9%BD%8B%E9%87%8D%E8%A9%95%E7%9F%B3%E9%A0%AD%E8%A8%98"
 
 #构造请求头信息
 header={
@@ -19,12 +19,15 @@ ike Gecko) Version/4.0 Chrome/57.0.2987.13\
 req=request.Request(url,headers=header)
 
 #发送请求.获取响应信息
-reponse=request.urlopen(req).read().decode() #解码---（编码encode()）
+response=request.urlopen(req).read().decode() #解码---（编码encode()）
 
-pat=r"<title>(.*?)</title>"
+# pat=r"<title>(.*?)</title>"
+#
+# data=re.findall(pat,reponse)
+#
+#
+# print(data[0])
+print(response)
 
-data=re.findall(pat,reponse)
 
-
-print(data[0])
 
