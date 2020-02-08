@@ -11,9 +11,9 @@ from lxml import etree
 # print(result2)
 
 #获取标签的属性
-html = etree.parse("c:/file/hello.html")
+html = etree.parse("D:\Desktop\python爬虫教程\课程代码\hello.html")
 # result1=html.xpath("//li/@class")
-result2=html.xpath("//li/a/@href")
+result2=html.xpath("//li/a[@href='http://baidu.com']")
 
 for i in result2:
-	requests.get(i)
+	print(i.text)

@@ -1,17 +1,23 @@
+#coding=utf-8
+import re
 import requests
+from lxml import etree
 
-from bs4 import BeautifulSoup
 
-url = "https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States"
+headers = {
+"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Ap\
+pleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Sa\
+fari/537.36"
+}
+url = r"https://zh.wikisource.org/zh-hans/脂硯齋重評石頭記"
 
-page = requests.get(url)
+response=requests.get(url,headers=headers).text
 
-soup = BeautifulSoup(page.content, 'html.parser')
+html=etree.HTML(response)
 
-tb = soup.find('table', class_='wikitable')
+result1=html.xpath("//li/a/text()") #获取所有span标签的信息
+result2=html.xpath("//li/text()") #获取所有span标签的信息
 
-for link in tb.find_all('b'):
 
-    name = link.find('a')
-
-    print(name.get_text('title'))
+for i in range(0,len(result1)):
+    print(result1[i]+result2[i])
