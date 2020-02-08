@@ -9,7 +9,7 @@ headers = {
 pleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Sa\
 fari/537.36"
 }
-url = r"https://zh.wikisource.org/zh-hans/脂硯齋重評石頭記/第九回"
+url = r"https://zh.wikisource.org/zh-hans/脂硯齋重評石頭記/第二十二回"
 
 response=requests.get(url,headers=headers).text
 
@@ -21,20 +21,7 @@ t = ''
 for i in result:
     t=t+i
 print(t)
-# pat1=r'title="脂硯齋重評石頭記/(.*?)">第[\s\S]*?回</a>　[\s\S]*?</li>'
-# pat2=r'title="脂硯齋重評石頭記/第[\s\S]*?回">第[\s\S]*?回</a>　(.*?)</li>'
-#
-# pattern1=re.compile(pat1)
-# pattern2=re.compile(pat2)
-#
-# data1=pattern1.findall(response)
-# data2=pattern2.findall(response)
-#
-#
-# resultlist=[]
-# for i in range(0,len(data1)):
-# 	# resultlist.append(data1[i]+data2[i])
-#     print(data1[i],data2[i])
+
 
 
 
