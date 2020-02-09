@@ -12,12 +12,15 @@ url = r"https://zh.wikisource.org/zh-hans/脂硯齋重評石頭記"
 
 response=requests.get(url,headers=headers).text
 
+# print(response)
+
 html=etree.HTML(response)
 
-print(html)
+hreflist=html.xpath("//div/ul/li/a/@href")
 
-# title1=html.xpath("//div/table/tbody/tr/td/text()")
-# print(title1[2])
+for href in hreflist:
+    href=href.replace("/wiki/", "")
+    print('https://zh.wikisource.org/zh-hans/'+ href)
 
 # result=html.xpath("//div/p/text()")
 #
