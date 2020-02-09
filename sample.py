@@ -1,5 +1,4 @@
-#coding=utf-8
-
+# coding=utf-8
 import requests
 from lxml import etree
 
@@ -8,20 +7,23 @@ headers = {
 pleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Sa\
 fari/537.36"
 }
-url = r"https://zh.wikisource.org/zh-hans/脂硯齋重評石頭記"
 
-response=requests.get(url,headers=headers).text
+# 爬取页面内容
+def loadPage(url):
 
-html=etree.HTML(response)
+    response = requests.get(url, headers=headers).text
 
-print(html)
+    html = etree.HTML(response)
 
-# title1=html.xpath("//div/table/tbody/tr/td/text()")
-# print(title1[2])
+    result = html.xpath("//div/p/text()")
 
-# result=html.xpath("//div/p/text()")
-#
-# t = ''
-# for i in result:
-#     t=t+i
-# print(t)
+    t = ''
+    for i in result:
+        t = t + i
+
+print(t)
+
+if __name__ == '__main__':
+
+    url=input("请输入：")
+
