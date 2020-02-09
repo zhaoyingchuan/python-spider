@@ -4,6 +4,7 @@ import requests
 from lxml import etree
 import time
 
+
 class Spider(object):
     def __init__(self):
         self.url = "https://zh.wikisource.org/zh-hans/"
@@ -28,18 +29,21 @@ class Spider(object):
 
     # 获取页面正文
     def loadText(self, html):
+        title1 = html.xpath("//div/table/tbody/tr/td/text()")
+        title2 = html.xpath("//div/table/tbody/tr/td/b/text()")
         result = html.xpath("//div/p/text()")
         text = ''
         for i in result:
             text = text + i
+        all = title1[2] + title2[0] + text
         # print(text)
-        self.writeText(text)
+        self.writeText(all)
         # time.sleep(10)
 
     # 保存正文到本地
-    def writeText(self, text):
-        f1 = open(r"D:\Desktop\脂砚斋重评红楼梦.txt", "a+",encoding='utf-8')
-        f1.write(text)
+    def writeText(self, all):
+        f1 = open(r"D:\Desktop\脂砚斋重评红楼梦.txt", "a+", encoding='utf-8')
+        f1.write(all)
         f1.close()
 
 

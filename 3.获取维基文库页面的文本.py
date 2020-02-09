@@ -8,7 +8,7 @@ headers = {
 pleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Sa\
 fari/537.36"
 }
-url = r"https://zh.wikisource.org/zh-hans/%E8%84%82%E7%A1%AF%E9%BD%8B%E9%87%8D%E8%A9%95%E7%9F%B3%E9%A0%AD%E8%A8%98/%E5%87%A1%E4%BE%8B"
+url = r"https://zh.wikisource.org/zh-hans/脂硯齋重評石頭記/第四回"
 
 response=requests.get(url,headers=headers).text
 
@@ -17,12 +17,18 @@ html=etree.HTML(response)
 # title1=html.xpath("//div/table/tbody/tr/td/text()")
 # print(title1[2])
 
+title1 = html.xpath("//div/table/tbody/tr/td/text()")
+title2 = html.xpath("//div/table/tbody/tr/td/b/text()")
 result=html.xpath("//div/p/text()")
 
-t = ''
+text = ''
 for i in result:
-    t=t+i
-print(t)
+    text=text+i
+
+all = title1[2] + title2[0] + text
+
+print(all)
+
 
 
 
