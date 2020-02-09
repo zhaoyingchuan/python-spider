@@ -18,7 +18,7 @@ response=requests.get(url,headers=headers).text
 html=etree.HTML(response)
 
 hreflist=html.xpath("//div/ul/li/a/@href")
-
+del hreflist[0:2]
 for href in hreflist:
     href=href.replace("/wiki/", "")
     print('https://zh.wikisource.org/zh-hans/'+ href)

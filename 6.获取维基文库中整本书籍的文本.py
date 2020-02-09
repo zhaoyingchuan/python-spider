@@ -16,6 +16,7 @@ class Spider(object):
         response = requests.get(url, headers=self.header).text
         html = etree.HTML(response)
         hreflist = html.xpath("//div/ul/li/a/@href")
+        del hreflist[0:2]
         for href in hreflist:
             href = href.replace("/wiki/", "")
             myurl = self.url + href
