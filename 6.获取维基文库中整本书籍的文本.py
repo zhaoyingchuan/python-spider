@@ -2,6 +2,7 @@
 
 import requests
 from lxml import etree
+import time
 
 class Spider(object):
     def __init__(self):
@@ -23,19 +24,23 @@ class Spider(object):
     def loadPage(self, url):
         response = requests.get(url, headers=self.header).text
         html = etree.HTML(response)
-        result = html.xpath("//div/p/text()")
-        t = ''
-        for i in result:
-            t = t + i
-        print(t)
+        self.loadText(html)
 
     # 获取页面正文
-    def loadText(self, link):
-        pass
+    def loadText(self, html):
+        result = html.xpath("//div/p/text()")
+        text = ''
+        for i in result:
+            text = text + i
+        # print(text)
+        self.writeText(text)
+        # time.sleep(10)
 
     # 保存正文到本地
     def writeText(self, text):
-        pass
+        f1 = open(r"D:\Desktop\脂砚斋重评红楼梦.txt", "a+",encoding='utf-8')
+        f1.write(text)
+        f1.close()
 
 
 if __name__ == '__main__':
