@@ -34,7 +34,7 @@ soup=BeautifulSoup(html,"lxml")
 # 	print(i.string)
 
 #根据正则表达式查找标签
-# data2=soup.find_all(re.compile("^b"))
+# data2=soup.find_all(re.compile("^p"))
 # for i in data2:
 # 	print(i.string)
 
@@ -44,9 +44,9 @@ soup=BeautifulSoup(html,"lxml")
 # 	print(i)
 
 #根据标签内容获取标签内容
-data4=soup.find_all(text="Lacie")
-data5=soup.find_all(text=["Lacie","Tillie"])
-data6=soup.find_all(text=re.compile("Do"))
-print(data6)
+# data4=soup.find_all(text="Lacie")
+# data5=soup.find_all(text=["Lacie","Tillie"])
+# data6=soup.find_all(text=re.compile("Do"))
+# print(data6)
 
 

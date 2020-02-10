@@ -26,7 +26,7 @@ and they lived at the bottom of a well.</p>
 soup=BeautifulSoup(html,"lxml")
 
 # #根据标签名获取标签信息 soup.标签名
-# print(soup.title)
+print(soup.p)
 
 # #获取标签内容
 # print(soup.title.string)
@@ -35,7 +35,7 @@ soup=BeautifulSoup(html,"lxml")
 # print(soup.title.name)
 
 # #获取标签内所有属性
-# print(soup.p.attrs["name"])
+# print(soup.p.attrs["class"])
 
 #获取直接子标签，结果是一个列表
 # print(soup.head.contents)
@@ -46,8 +46,8 @@ soup=BeautifulSoup(html,"lxml")
 
 
 #获取所有子标签，结果是一个生成器
-for i in soup.p.descendants:
-	print(i)
+# for i in soup.p.descendants:
+# 	print(i)
 
 
 

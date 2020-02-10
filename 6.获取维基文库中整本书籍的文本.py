@@ -12,11 +12,11 @@ class Spider(object):
 
     # 构造url
     def tiebaSpider(self):
-        url = r"https://zh.wikisource.org/zh-hans/脂硯齋重評石頭記"
+        url = r"https://zh.wikisource.org/zh-hans/三國演義"
         response = requests.get(url, headers=self.header).text
         html = etree.HTML(response)
         hreflist = html.xpath("//div/ul/li/a/@href")
-        del hreflist[0:2]
+        # del hreflist[0:2]
         for href in hreflist:
             href = href.replace("/wiki/", "")
             myurl = self.url + href
@@ -36,14 +36,14 @@ class Spider(object):
         text = ''
         for i in result:
             text = text + i
-        all = title1[2] + title2[0] + text
-        # print(text)
+        all = title1[4] + title2[1] + text
+        print(all)
         self.writeText(all)
         # time.sleep(10)
 
     # 保存正文到本地
     def writeText(self, all):
-        f1 = open(r"D:\Desktop\脂砚斋重评红楼梦.txt", "a+", encoding='utf-8')
+        f1 = open(r"D:\Desktop\三國演義.txt", "a+", encoding='utf-8')
         f1.write(all)
         f1.close()
 

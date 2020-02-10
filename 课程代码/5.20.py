@@ -22,7 +22,7 @@ soup=BeautifulSoup(html,"lxml")
 #CSS选择器类型：标签选择器、类选择器、id选择器
 
 #通过标签名查找
-# data=soup.select("a")
+data=soup.select("a")
 
 #通过类名查找
 # data=soup.select(".sister")
@@ -31,10 +31,10 @@ soup=BeautifulSoup(html,"lxml")
 # data=soup.select("#link2")
 
 #组合查找
-# data=soup.select("p #link1")
+# data=soup.select("p #link2")
 
 #通过其他属性查找
-data=soup.select('a[href="http://example.com/tillie"]')
+# data=soup.select('a[href="http://example.com/tillie"]')
 
 
-print(data)
+print(type(data))

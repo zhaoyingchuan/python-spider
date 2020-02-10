@@ -24,14 +24,17 @@ and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
 
-# #解析字符串形式的html
+#解析字符串形式的并格式化输出
 soup=BeautifulSoup(html,"lxml")
-
+# print(soup.prettify())
+#
+#
+# print(soup.b.string)
 
 #根据字符串查找所有的a标签，返回一个结果集，里面装的是标签对象
-# data=soup.find_all("a")
-# for i in data:
-# 	print(i.string)
+data=soup.find_all("a")
+for i in data:
+	print(i.string)
 
 #根据正则表达式查找标签
 # data2=soup.find_all(re.compile("^b"))
@@ -44,9 +47,9 @@ soup=BeautifulSoup(html,"lxml")
 # 	print(i)
 
 #根据标签内容获取标签内容
-data4=soup.find_all(text="Lacie")
-data5=soup.find_all(text=["Lacie","Tillie"])
-data6=soup.find_all(text=re.compile("Do"))
-print(data6)
+# data4=soup.find_all(text="Lacie")
+# data5=soup.find_all(text=["Lacie","Tillie"])
+# data6=soup.find_all(text=re.compile("Do"))
+# print(data6)
 
 
