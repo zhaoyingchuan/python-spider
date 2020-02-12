@@ -27,9 +27,9 @@ for x in urllist:
 #     href=href.replace("/wiki/", "")
 #     print('https://zh.wikisource.org/zh-hans/'+ href)
 
-# result=html.xpath("//div/p/text()")
-#
-# t = ''
-# for i in result:
-#     t=t+i
-# print(t)
+result=html.xpath("//div/p/text()")
+
+t = ''
+for i in result:
+    t=t+i
+print(t)
