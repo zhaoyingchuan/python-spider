@@ -8,13 +8,17 @@ headers = {
 pleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Sa\
 fari/537.36"
 }
+
 url = r"https://mp.weixin.qq.com/s/7huJOS7G4HEZYx1FtOTxIw"
 
 response = requests.get(url, headers=headers).text
 
 pat = r'<img data-ratio="[\s\S]*?" data-src="(.*?)" data-type="jpeg" data-w="[\s\S]*?"'
+
 pattern = re.compile(pat)
+
 data = pattern.findall(response)
+
 for i in range(0, len(data)):
     picurl = data[i]
     data = requests.get(picurl).content
