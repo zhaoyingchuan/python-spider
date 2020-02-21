@@ -13,7 +13,7 @@ url = r"https://zh.wikisource.org/zh-hans/三國演義"
 
 response=requests.get(url,headers=headers).text
 
-print(response)
+# print(response)
 
 html=etree.HTML(response)
 
@@ -23,9 +23,9 @@ for href in hreflist:
     href=href.replace("/wiki/", "")
     print('https://zh.wikisource.org/zh-hans/'+ href)
 
-# result=html.xpath("//div/p/text()")
-#
-# t = ''
-# for i in result:
-#     t=t+i
-# print(t)
+# # result=html.xpath("//div/p/text()")
+# #
+# # t = ''
+# # for i in result:
+# #     t=t+i
+# # print(t)
