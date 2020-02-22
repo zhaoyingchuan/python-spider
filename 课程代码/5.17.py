@@ -26,7 +26,7 @@ and they lived at the bottom of a well.</p>
 soup=BeautifulSoup(html,"lxml")
 
 # #根据标签名获取标签信息 soup.标签名
-print(soup.p)
+print(soup.title.string)
 
 # #获取标签内容
 # print(soup.title.string)
