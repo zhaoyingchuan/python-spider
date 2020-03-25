@@ -1,14 +1,37 @@
 import requests
-from lxml import etree
 
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Ap\
-pleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Sa\
-fari/537.36"
-}
 
-url = r"https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic1.html"
+def spider(paperurl, picpat):
+    # coding=utf-8
+    import re
+    import requests
+    from lxml import etree
+    from lxml import html
 
-response = requests.get(url, headers=headers).text
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Ap\
+    pleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Sa\
+    fari/537.36"
+    }
 
-print(response)
+    response = requests.get(paperurl, headers=headers).text
+
+    pattern = re.compile(picpat)
+
+    data = pattern.findall(response)
+
+    for i in range(15, 20):
+        picurl = data[i]
+        write(picurl, i)
+
+
+def write(picurl, i):
+    data = requests.get(picurl).content
+    with open("D:\Desktop\微信jpeg\\{}.jpeg".format(i), "wb") as f:
+        f.write(data)
+
+
+if __name__ == '__main__':
+    paperurl = r"https://mp.weixin.qq.com/s/7huJOS7G4HEZYx1FtOTxIw"
+    picpat = r'<img data-ratio="[\s\S]*?" data-src="(.*?)" data-type="jpeg" data-w="[\s\S]*?"'
+    spider(paperurl, picpat)
