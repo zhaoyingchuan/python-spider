@@ -20,7 +20,7 @@ def spider(paperurl, picpat):
 
     data = pattern.findall(response)
 
-    for i in range(15, 20):
+    for i in range(0, 2):
         picurl = data[i]
         write(picurl, i)
 
