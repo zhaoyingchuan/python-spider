@@ -1,18 +1,10 @@
+# coding=utf-8
+import re
 import requests
 
-
 def spider(paperurl, picpat):
-    # coding=utf-8
-    import re
-    import requests
-    from lxml import etree
-    from lxml import html
-
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Ap\
-    pleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Sa\
-    fari/537.36"
-    }
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"}
 
     response = requests.get(paperurl, headers=headers).text
 
@@ -20,8 +12,9 @@ def spider(paperurl, picpat):
 
     data = pattern.findall(response)
 
-    for i in range(0, 2):
+    for i in range(0, len(data)):
         picurl = data[i]
+        print(picurl)
         write(picurl, i)
 
 
