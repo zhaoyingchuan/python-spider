@@ -25,6 +25,6 @@ def write(picurl, i):
 
 
 if __name__ == '__main__':
-    paperurl = r"https://mp.weixin.qq.com/s/7huJOS7G4HEZYx1FtOTxIw"
+    paperurl = r"https://mp.weixin.qq.com/s/nR1ieFYsIqMXMx_BntUFEw"
     picpat = r'<img data-ratio="[\s\S]*?" data-src="(.*?)" data-type="jpeg" data-w="[\s\S]*?"'
     spider(paperurl, picpat)
