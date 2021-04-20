@@ -8,7 +8,7 @@ headers = {
 pleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Sa\
 fari/537.36"
 }
-url = r"https://zh.wikisource.org/wiki/脂硯齋重評石頭記"
+url = r"https://zh.wikisource.org/zh-hans/脂硯齋重評石頭記"
 
 response = requests.get(url, headers=headers).text
 

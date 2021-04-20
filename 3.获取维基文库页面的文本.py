@@ -8,7 +8,7 @@ headers = {
 pleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Sa\
 fari/537.36"
 }
-url = r"https://zh.wikisource.org/wiki/三國演義/第002回"
+url = r"https://zh.wikisource.org/zh-hans/三國演義/第003回"
 
 response=requests.get(url,headers=headers).text
 
